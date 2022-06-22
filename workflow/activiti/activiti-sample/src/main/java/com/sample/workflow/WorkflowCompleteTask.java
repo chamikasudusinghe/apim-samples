@@ -153,13 +153,17 @@ public class WorkflowCompleteTask implements JavaDelegate {
         return result;
     }
 
+    //for testing purposes
     public static void main(String[] args) {
         try {
-            String accessToken = getAccessToken("https://localhost:8243/token", "TMEc68doOp14nZzBo0TqnZtLN58a",
-                    "orVhwN4U0wp0ZLzCf71b52nefbMa");
+            //replace with the client id and client secret
+            String accessToken = getAccessToken("https://localhost:9443/oauth2/token",
+                    "xxxxxxxxxxxxxxxxxxxx",
+                    "xxxxxxxxxxxxxxxxxxxx");
             System.out.println(accessToken);
             System.out
-                    .println(completeWorkflow("https://localhost:9443/api/am/admin/v1/workflows/update-workflow-status",
+                    .println(completeWorkflow
+                            ("https://localhost:9443/api/am/admin/v3/workflows/update-workflow-status",
                             accessToken, "dddddddd", "APPROVED"));
         } catch (Exception e) {
             // TODO Auto-generated catch block

@@ -23,16 +23,18 @@
     <serviceTask id="callback" name="Callback Task" activiti:class="com.sample.workflow.WorkflowCompleteTask">
       <extensionElements>
         <activiti:field name="consumerKey">
+          <!-- replace with client id-->
           <activiti:string><![CDATA[xxxxxxxxxxxxxxxxxxxx]]></activiti:string>
         </activiti:field>
         <activiti:field name="consumerSecret">
+          <!--replace with client secret-->
           <activiti:string><![CDATA[xxxxxxxxxxxxxxxxxxxx]]></activiti:string>
         </activiti:field>
         <activiti:field name="tokenEndpoint">
-          <activiti:string><![CDATA[https://localhost:8243/token]]></activiti:string>
+          <activiti:string><![CDATA[https://localhost:9443/oauth2/token]]></activiti:string>
         </activiti:field>
         <activiti:field name="callbackEndpoint">
-          <activiti:string><![CDATA[https://localhost:9443/api/am/admin/v1/workflows/update-workflow-status]]></activiti:string>
+          <activiti:string><![CDATA[https://localhost:9443/api/am/admin/v3/workflows/update-workflow-status]]></activiti:string>
         </activiti:field>
         <activiti:field name="referenceId">
           <activiti:expression><![CDATA[${referenceId}]]></activiti:expression>
